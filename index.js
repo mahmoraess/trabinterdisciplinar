@@ -1,9 +1,8 @@
-const express = require("express");
-const app = express();
+const app = require("./app.js");
 
 const usuarioRoutes = require("./routes/usuarioRoutes.js");
 app.use("/usuarios", usuarioRoutes);
 
-app.listen(8000, (err) => {
+app.listen(8000, () => {
     console.log("Aplicação rodando em localhost:8000");
 });
