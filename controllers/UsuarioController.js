@@ -24,9 +24,8 @@ class UsuarioController {
     });
 
     res.json({
-      usuarioId: usuario.id,
       erro: false,
-      msg: "Usuário cadastrado com sucesso!",
+      mensagem: "Usuário cadastrado com sucesso!",
       token: token,
     });
   }
@@ -41,7 +40,7 @@ class UsuarioController {
     if (!usuario) {
       return res.json({
         erro: true,
-        msg: "Usuário não encontrado!",
+        mensagem: "Usuário não encontrado!",
       });
     }
 
@@ -49,7 +48,7 @@ class UsuarioController {
     if (!senhaCorreta) {
       return res.json({
         erro: true,
-        msg: "Senha incorreta!",
+        mensagem: "Senha incorreta!",
       });
     }
 
@@ -59,7 +58,7 @@ class UsuarioController {
 
     res.json({
       erro: false,
-      msg: "Autenticado!",
+      mensagem: "Autenticado!",
       token: token,
     });
   }
