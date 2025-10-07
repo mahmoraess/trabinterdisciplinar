@@ -24,6 +24,7 @@ class UsuarioController {
     });
 
     res.json({
+      usuarioId: usuario.id,
       erro: false,
       msg: "Usuário cadastrado com sucesso!",
       token: token,
