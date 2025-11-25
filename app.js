@@ -16,3 +16,9 @@ app.post("/soma", (req, res) => {
 });
 
 module.exports = app;
+
+const mesaRoutes = require("./routes/mesaRoutes");
+const reservaRoutes = require("./routes/reservaRoutes");
+
+app.use("/mesas", mesaRoutes);
+app.use("/reservas", reservaRoutes);

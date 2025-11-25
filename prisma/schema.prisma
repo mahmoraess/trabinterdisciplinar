@@ -14,8 +14,26 @@ datasource db {
 }
 
 model usuario {
-  id Int @id @default(autoincrement())
-  nome String
+  id    Int    @id @default(autoincrement())
+  nome  String
   email String @unique
   senha String
+
+  reservas Reserva[]
+}
+
+model Mesa {
+  id        Int        @id @default(autoincrement())
+  numero    Int        @unique
+  lugares   Int
+  reservas  Reserva[]
+}
+
+model Reserva {
+  id        Int      @id @default(autoincrement())
+  data      DateTime
+  usuario   usuario  @relation(fields: [usuarioId], references: [id])
+  usuarioId Int
+  mesa      Mesa     @relation(fields: [mesaId], references: [id])
+  mesaId    Int
 }
